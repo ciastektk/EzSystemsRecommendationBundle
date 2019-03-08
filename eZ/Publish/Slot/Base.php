@@ -9,17 +9,17 @@
 namespace EzSystems\RecommendationBundle\eZ\Publish\Slot;
 
 use eZ\Publish\Core\SignalSlot\Slot as BaseSlot;
-use EzSystems\RecommendationBundle\Client\RecommendationClient;
+use EzSystems\RecommendationBundle\Rest\Api\RecommendationNotifier;
 
 abstract class Base extends BaseSlot
 {
-    /** @var \EzSystems\RecommendationBundle\Client\RecommendationClient */
+    /** @var \EzSystems\RecommendationBundle\Rest\Api\RecommendationNotifier */
     protected $client;
 
     /**
-     * @param \EzSystems\RecommendationBundle\Client\RecommendationClient $client
+     * @param \EzSystems\RecommendationBundle\Rest\Api\RecommendationNotifier $client
      */
-    public function __construct(RecommendationClient $client)
+    public function __construct(RecommendationNotifier $client)
     {
         $this->client = $client;
     }
